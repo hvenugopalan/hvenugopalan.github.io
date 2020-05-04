@@ -50,7 +50,7 @@
           <li><a href="#m">Motivation</a></li>
           <li><a href="#rw">Related Work</a></li>
           <li><a href="#ds">Dataset</a></li>
-          <li><a href="#m">Methodology</a></li>
+          <li><a href="#method">Methodology</a></li>
           <li><a href="#te">Testing and Evaluation</a></li>
           <li><a href="#r">Results</a></li>
           <li><a href="#c">Challenges</a></li>
@@ -83,9 +83,12 @@
 
         <div class="section-title">
           <h2>Problem Definition</h2>
-          <p>Our project will use computer vision for segmenting building footprints from aerial imagery. The data consists of images taken by a drone from 10 different regions across Africa and
-             has been provided through the <a href="https://www.drivendata.org/competitions/60/building-segmentation-disaster-resilience/page/150/">Open Cities AI Challenge</a>. 
-             Our goal is to classify the presence or absence of a building on a pixel-by-pixel basis. </p>
+          <p>Our project will use computer vision for segmenting building footprints from aerial imagery. The data
+            consists of images taken by a drone from 10 different regions across Africa and
+            has been provided through the <a
+              href="https://www.drivendata.org/competitions/60/building-segmentation-disaster-resilience/page/150/">Open
+              Cities AI Challenge</a>.
+            Our goal is to classify the presence or absence of a building on a pixel-by-pixel basis. </p>
         </div>
 
         <!-- <div class="row content">
@@ -167,50 +170,154 @@
     </section><!-- End Features Section -->
 
     <!-- ======= Steps Section ======= -->
-    <section id="steps" class="steps">
+    <section id="method" class="steps">
+      <div class="section-title">
+        <h2>Methodology</h2>
+        <h3>Data preprocessing</h3>
+      </div>
+      
       <div class="container">
 
         <div class="row no-gutters" data-aos="fade-up">
 
           <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="100">
             <span>01</span>
-            <h4>Lorem Ipsum</h4>
-            <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero placeat</p>
+            <h4>Data visualization before preprocessing</h4>
+            <p>The dataset is in the form of different folders, each
+              named after different African cities. Each such
+              folder in turn contains a specific number of ’scene’
+              sub-folders and their corresponding ’label’ subfolders. For further steps, each ’scene’ sub-folder
+              and its corresponding label sub-folder are considered as a pair. A few of the ’scene’ and their
+              corresponding ’label’ images were visualized for better
+              understanding of the structure of the given data, as shown in the images below. </p><br />
+            <!-- <img src="../assets/img/tiff.jpg" class="img-fluid"><br/>
+            <img src="../assets/img/geojson.jpg" class="img-fluid"> -->
+
           </div>
 
           <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="200">
             <span>02</span>
-            <h4>Repellat Nihil</h4>
-            <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire leno para dest
+            <h4>Creation of masks for the tiles</h4>
+            <p>In this step, the mask for each tile was created
+              by cropping and using the solaris package. The
+              3-channel mask has building footprint as the first
+              channel, the boundary as the second and a 0-
+              initialised third channel.
             </p>
           </div>
 
           <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="300">
             <span>03</span>
-            <h4> Ad ad velit qui</h4>
-            <p>Molestiae officiis omnis illo asperiores. Aut doloribus vitae sunt debitis quo vel nam quis</p>
+            <h4>Division of images into tiles</h4>
+            <p>In this step, the python package ’supermercado’
+              was used to generate square polygons representing
+              the slippy map tiles (a term referring to modern web
+              maps that allows zooming and panning around) out
+              of the ’scene’ and ’label’ images. Slippy map tiles
+              of tile size=256 and zoom level=19 were generated,
+              which yields a manageable number of tiles and satisfactory segmentation results without much preprocessing
+              or model training time.
+              Then, a GeoDataFrame that consists of all the
+              supermercado-generated slippy map tile polygons
+              was generated using the Python library, ’geopandas’.
+              Finally, all the tiles( created for all the cities and
+              its corresponding labels) were merged into a single folder for training the building segmentation
+              model.</p>
           </div>
 
           <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="100">
             <span>04</span>
-            <h4>Repellendus molestiae</h4>
-            <p>Inventore quo sint a sint rerum. Distinctio blanditiis deserunt quod soluta quod nam mider lando casa</p>
+            <h4>Division of tiles into training and validation sets</h4>
+            <p>To improve the prediction efficiency of the building segmentation model, the given dataset was divided
+              into training and validation sets in the ratio of
+              75:25.</p>
           </div>
 
           <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="200">
             <span>05</span>
-            <h4>Sapiente Magnam</h4>
-            <p>Vitae dolorem in deleniti ipsum omnis tempore voluptatem. Qui possimus est repellendus est quibusdam</p>
-          </div>
-
-          <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="300">
-            <span>06</span>
-            <h4>Facilis Impedit</h4>
-            <p>Quis eum numquam veniam ea voluptatibus voluptas. Excepturi aut nostrum repudiandae voluptatibus corporis
-              sequi</p>
+            <h4>Visualization of the preprocessed data</h4>
+            <p>Few of the training set tiles were visualised to view
+              the preprocessed data, as shown in the figure below.
+              Then, the images and masks were saved in images
+              and masks folder respectively</p>
           </div>
 
         </div>
+
+        <div class="section-title">
+          <h3>Training</h3>
+        </div>
+        <div class="container">
+
+          <div class="row no-gutters" data-aos="fade-up">
+  
+            <div class="col-md-6 content-item" data-aos="fade-up" data-aos-delay="100">
+              <span>01</span>
+              <h4>Setting up the data</h4>
+              <p>The training dataset of tile images and masks created in the data pre-processing step was set up to
+                load correctly into fastai for training and validation. With the fastai library,image segmentation
+                models could be built with a few lines of code using
+                the classes and methods provided. Transformations
+                were added to the images and a databunch was created from the resulting augmented data to be used
+                by the model learner.
+                </p><br />
+              <!-- <img src="../assets/img/tiff.jpg" class="img-fluid"><br/>
+              <img src="../assets/img/geojson.jpg" class="img-fluid"> -->
+  
+            </div>
+  
+            <div class="col-md-6 content-item" data-aos="fade-up" data-aos-delay="200">
+              <span>02</span>
+              <h4>Define custom losses and metrics</h4>
+              <p>Two loss functions that show high performance
+                for image segmentation tasks, namely Jaccard
+                Loss and Focal Loss were implemented. These
+                loss functions were then combined and calculated
+                across the 3 channels with adjustable weighting. In
+                considering the image-wide context with adjustable
+                weighing of the 3 target mask channels, the approach of combining a Jaccard loss with individual
+                pixel-focused Binary Cross Entropy or Focal loss
+                has been shown to consistently exceed the performance of single loss functions. Finally, our model
+                evaluation metrics (accuracy and Jaccard score)
+                were adapted to calculate a mean score for all the
+                channels or by a specified individual channel.
+              </p>
+            </div>
+  
+            <div class="col-md-12 content-item" data-aos="fade-up" data-aos-delay="300">
+              <span>03</span>
+              <h4>Building the U-Net Model</h4>
+              <p>A U-Net is a convolutional neural network that consists of two paths, namely the contraction path (the
+                encoder) and the expansion path (the decoder), as
+                shown in Figure 7. The encoder extracts features of
+                3
+                the image using convolutional and pooling layers.
+                During the process of encoding, the size of the feature map gets reduced. The decoder then uses Upconvolution layers to recover the size of the feature
+                map for segmentation of the image. Since the decoding process loses some of the higher level features learned by the encoder, the skip connections
+                of the U-Net passes the outputs of the encoding layers directly to the decoding layers so that all the important pieces of information can be preserved [8].
+                The fastai library was used to create and train our
+                U-Net model with the U-Net learner class. The
+                data along with the ImageNet pretrained encodernetwork (Resnet34), our accuracy function as well
+                as a weight-decay of 0.01 was passed. Then, using
+                the fastai function, an appropriate learning rate was
+                found and the model training was started. First, we
+                fine-tuned only the decoder part of the U-Net leaving the weights for the resnet34 encoder frozen for
+                some epochs. Then, we unfroze all the trainable
+                weights/layers of our model and trained for some
+                more epochs. We also tracked the loss function
+                metrics per epoch as training progressed to make
+                sure the model continued to improve and did not
+                over-fit the training data. Further, we generated
+                some batches of predictions on the validation set,
+                calculated and reshaped the image-wise loss values,
+                and sorted them by highest loss first to see the worst
+                performing results.
+                </p>
+            </div>
+  
+            
+  
+          </div>
 
       </div>
     </section><!-- End Steps Section -->
