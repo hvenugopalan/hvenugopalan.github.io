@@ -83,6 +83,8 @@
 
         <div class="section-title">
           <h2>Problem Definition</h2>
+        </div>
+        <div>
           <p>Our project will use computer vision for segmenting building footprints from aerial imagery. The data
             consists of images taken by a drone from 10 different regions across Africa and
             has been provided through the <a
@@ -169,7 +171,180 @@
       </div> -->
     </section><!-- End Features Section -->
 
-    <!-- ======= Steps Section ======= -->
+    <section id="m" class="features" data-aos="fade-up">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Motivation</h2>
+        </div>
+        <div>
+          <p>With the significant paradigm shift in the construction
+            industry and advancement in construction technology, the
+            typical construction timeline has decreased drastically. One
+            challenge for cities is managing the risk of disasters in a
+            constantly changing environment. Buildings, roads, and
+            other critical infrastructure need to be mapped frequently
+            and accurately to represent assets important to every community. Hence, the key to disaster risk management
+            (DRM)
+            is knowing the location of the resources vulnerable to damage or disruption by natural hazards.</p>
+        </div>
+      </div>
+    </section>
+
+    <!--Related Works-->
+    <section id="rw" class="steps" data-aos="fade-up">
+      <div class="container">
+        <div class="section-title">
+          <h2>Related Work</h2>
+        </div>
+        <div class="row no-gutters" data-aos="fade-up">
+
+          <div class="col-md-6 content-item" data-aos="fade-up" data-aos-delay="100">
+            <p>There is a large amount of literature on semantic segmentation. O Ronneberger et al. architectured a
+              convolutional
+              neural network (CNN) for medical image segmentation that
+              consists of contracting and expanding paths. [7]. The main
+              difference in the architecture is the concatenation of the
+              contractive path feature maps to the corresponding expansion path layer. The model achieves good
+              performance
+              even
+              on very few annotated images.</p><br>
+            <p>Alex Kendall, Vijay Badrinarayana and Roberto Cipolla
+              proposed SegNet[3], a CNN for multi-class pixel-wise segmentation. The model architecture consists of
+              encoder, decoder
+              and a pixel-wise classifier. SegNet achieves great performance in terms of memory and time during
+              inference.
+            </p><br>
+            <p>In 2018, Zongwei Zhou et. al redesigned the skip pathways in U-Net architecture to reduce the semantic
+              gap
+              between the encoder and the decoder, and provided reasoning
+              for this design. U-Net++ has shown to perform better than
+              U-Net across multiple medical segmentation tasks.</p>
+            <!-- <img src="../assets/img/tiff.jpg" class="img-fluid"><br/>
+            <img src="../assets/img/geojson.jpg" class="img-fluid"> -->
+
+          </div>
+
+          <div class="col-md-6 content-item" data-aos="fade-up" data-aos-delay="200">
+
+            <p>Researchers from ETH Zurich studied the trade-off between pixel accuracy and readily available but less
+              accurate
+              reference data for image segmentation by using online map
+              data from OpenStreetMap (OSM) to automatically obtain
+              weakly labeled training data for three classes, namely buildings, roads, and background (everything other
+              than buildings and roads).[5]. They use deep learning techniques,
+              which they purport as data hungry and robust to label noise.</p><br>
+            <p>Sebastien Ohleyer [6] performed segmentation on aerial
+              image datasets using a Mask R-CNN and compared its performance to baseline results obtained with two more
+              classical networks: a Fully Convolutional Network (FCN) and
+              its extension using a Multi-Layer Perceptron (MLP). It was
+              found that Mask R-CNN achieves better perfomance than
+              MLP and FCN but needed a lot of hyperparameter tuning
+              to predict well on very dense cities, ie. where the buildings
+              were really close.</p><br>
+            <p>Our work deals with the segmentation of remotely
+              sensed images provided by OpenAI using the existing deep
+              learning models like U-Net.</p>
+            </p>
+          </div>
+        </div>
+    </section>
+
+    <!--Dataset-->
+    <section id="ds" class="features" data-aos="fade-up">
+      <div class="container">
+        <div class="section-title">
+          <h2>Dataset</h2>
+        </div>
+        <div>
+          <p>The data collected using OpenStreetMap (OSM) is
+            stored in the form of SpatioTemporal Asset Catalogs
+            (STACs). A STAC is a standardized specification that allows easy query of geospatial imagery and labels.
+            Precisely, the images in the dataset are stored as large Cloud
+            Optimized GeoTiffs (COG) and the building footprints are
+            stored in GeoJSON format (GeoJSON). A series of JSON
+            files that comprise a STAC reference each other as well as
+            the geospatial assets (e.g. imagery, labels). The data is divided into training data and test data, as
+            explained further.</p>
+        </div>
+      </div>
+
+      <section class="steps">
+        <div class="container">
+          <div class="row no-gutters" data-aos="fade-up">
+
+            <div class="col-md-6 content-item" data-aos="fade-up" data-aos-delay="100">
+              <h4>Training data</h4>
+              <p>We have used Tier 1 of the dataset given by the Open
+                Cities AI Challenge for training the building segmentation
+                model. The data is divided into training and validation sets
+                from different drone images (in cloud-optimized GeoTIFF
+                format) and its accompanying ground-truth labels of manually traced building outlines (in GeoJSON
+                format). The
+                below table depicts a summary of the training data.</p>
+
+                <table class="training">
+                  <thead>
+                    <tr>
+                      <th>City</th>
+                      <th>Scene Count</th>
+                      <th>Building Count</th>
+                    </tr>
+                    </thead>
+                  <tbody>
+                  <tr style="height: 21.951px;">
+                  <td style="height: 21.951px;">Accra</td>
+                  <td style="height: 21.951px;">4</td>
+                  <td style="height: 21.951px;">33585</td>
+                  </tr>
+                  <tr style="height: 21px;">
+                  <td style="height: 21px;">Dar es Salaam</td>
+                  <td style="height: 21px;">6</td>
+                  <td style="height: 21px;">1231171</td>
+                  </tr>
+                  <tr style="height: 21px;">
+                  <td style="height: 21px;">Kampala</td>
+                  <td style="height: 21px;">1</td>
+                  <td style="height: 21px;">4056</td>
+                  </tr>
+                  <tr style="height: 21px;">
+                  <td style="height: 21px;">Montepuez</td>
+                  <td style="height: 21px;">4</td>
+                  <td style="height: 21px;">6947</td>
+                  </tr>
+                  <tr style="height: 21px;">
+                  <td style="height: 21px;">Niamey</td>
+                  <td style="height: 21px;">1</td>
+                  <td style="height: 21px;">634</td>
+                  </tr>
+                  <tr style="height: 21px;">
+                  <td style="height: 21px;">Pointe-Noire</td>
+                  <td style="height: 21px;">2</td>
+                  <td style="height: 21px;">8731</td>
+                  </tr>
+                  <tr style="height: 21px;">
+                  <td style="height: 21px;">Zanzibar</td>
+                  <td style="height: 21px;">13</td>
+                  <td style="height: 21px;">13407</td>
+                  </tr>
+                  </tbody>
+                  </table>
+            </div>
+
+            <div class="col-md-6 content-item" data-aos="fade-up" data-aos-delay="200">
+              <h4>Test data</h4>
+              <p>The test set consists of 11,481 1024 x 1024 pixel CloudOptimized GeoTIFF ”chips” derived from myriad of
+                scenes.
+                These scenes are mutually exclusive of the training set.
+                Some of the test scenes are from regions that are present
+                in the training set while others are not.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- ======= Methodology ======= -->
     <section id="method" class="steps">
       <div class="section-title">
         <h2>Methodology</h2>
@@ -244,7 +419,7 @@
 
         </div>
     </section>
-    <!-- ======= Preprocessing Images Section ======= -->
+    <!-- ======= Preprocessing Images ======= -->
     <section class="services">
       <div class="container" data-aos="fade-up">
 
@@ -255,6 +430,7 @@
               <h4 class="title"><a href="">Image scene example</a></h4>
             </div>
           </div>
+
 
           <div class="col-md-6  d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box">
@@ -282,10 +458,11 @@
         </div>
 
       </div>
-    </section><!-- End preproessing images Section -->
+    </section>
     <br>
     <br>
 
+    <!--Training-->
     <section class="steps">
       <div class="section-title">
         <h3>Training</h3>
@@ -366,7 +543,7 @@
         </div>
 
       </div>
-    </section><!-- End Steps Section -->
+    </section>
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->

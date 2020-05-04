@@ -665,7 +665,7 @@ section {
 }
 
 .steps .content-item p {
-  color: #aaaaaa;
+  /* color: #aaaaaa; */
   font-size: 15px;
   margin: 0;
   padding: 0;
@@ -1562,4 +1562,9 @@ section {
   background: #3b4ef8;
   color: #fff;
   text-decoration: none;
+}
+
+/* Table */
+.training td{
+    border: 1px dotted #999999;
 }
