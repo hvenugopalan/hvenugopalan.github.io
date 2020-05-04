@@ -476,6 +476,44 @@
             </div>
           </div>
         </div>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-md-12  d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box">
+              <img src="./assets/img/Decoder_Table&Better.JPG" class="img-fluid" style="height:90%; width:80%">
+              <h4 class="title">Model Training Output for Decoder Only</h4>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-md-12  d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box">
+              <img src="./assets/img/Both_Table.JPG" class="img-fluid" style="height:90%; width:80%">
+              <h4 class="title">Model Training Output for Decoder and Encoder</h4>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-md-6  d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box">
+              <img src="./assets/img/Both_Prediction.JPG" class="img-fluid" style="height:90%; width:80%">
+              <h4 class="title">Model Prediction Example for Decoder and Encoder</h4>
+            </div>
+          </div>
+
+          <div class="col-md-6  d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box">
+              <img src="./assets/img/DecoderOnly_Prediction.JPG" class="img-fluid" style="height:90%; width:80%">
+              <h4 class="title">Model Prediction Example for Decoder Only</h4>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -542,6 +580,55 @@
             <li>Data Augmentation (without data augmentation, with different types of data augmentation).</li>
             <li>With and without self attention.</li>
           </ol>
+          <br>
+          <br>
+          <div class="row">
+
+            <div class="col-md-12">
+              <table class="training col-md-10">
+                <thead>
+                  <tr>
+                    <th class="tg-0pky">Model</th>
+                    <th class="tg-0pky">Training loss</th>
+                    <th class="tg-0pky">Validation loss</th>
+                    <th class="tg-0pky">Accuracy</th>
+                    <th class="tg-0pky">Dice coefficient</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="tg-0pky">Resnet34 with flip added and self-attention</td>
+                    <td class="tg-0pky">0.51</td>
+                    <td class="tg-0pky">0.50</td>
+                    <td class="tg-0pky">0.92</td>
+                    <td class="tg-0pky">0.85</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">Resnet34 with flip added</td>
+                    <td class="tg-0pky">0.55</td>
+                    <td class="tg-0pky">0.54</td>
+                    <td class="tg-0pky">0.91</td>
+                    <td class="tg-0pky">0.83</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">Resnet34 without data augmentation</td>
+                    <td class="tg-0pky">0.58</td>
+                    <td class="tg-0pky">0.60</td>
+                    <td class="tg-0pky">0.90</td>
+                    <td class="tg-0pky">0.80</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">Resnet18</td>
+                    <td class="tg-0pky">0.63</td>
+                    <td class="tg-0pky">0.63</td>
+                    <td class="tg-0pky">0.89</td>
+                    <td class="tg-0pky">0.79</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -570,48 +657,7 @@
         </div>
       </div>
     </section>
-    <section class="services">
-      <div class="container" data-aos="fade-up">
-        <div class="row">
-          <div class="col-md-12  d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon-box">
-              <img src="./assets/img/Decoder_Table&Better.JPG" class="img-fluid" style="height:90%; width:80%">
-              <h4 class="title">Model Training Output for Decoder Only</h4>
-            </div>
-          </div>
-        </div>
-        <br>
-        <br>
 
-        <br>
-        <br>
-        <div class="row">
-          <div class="col-md-12  d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon-box">
-              <img src="./assets/img/Both_Table.JPG" class="img-fluid" style="height:90%; width:80%">
-              <h4 class="title">Model Training Output for Decoder and Encoder</h4>
-            </div>
-          </div>
-        </div>
-        <br>
-        <br>
-        <div class="row">
-          <div class="col-md-6  d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon-box">
-              <img src="./assets/img/Both_Prediction.JPG" class="img-fluid" style="height:90%; width:80%">
-              <h4 class="title">Model Prediction Example for Decoder and Encoder</h4>
-            </div>
-          </div>
-
-          <div class="col-md-6  d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon-box">
-              <img src="./assets/img/DecoderOnly_Prediction.JPG" class="img-fluid" style="height:90%; width:80%">
-              <h4 class="title">Model Prediction Example for Decoder Only</h4>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!--Challenges-->
     <section id="c" class="features" data-aos="fade-up">

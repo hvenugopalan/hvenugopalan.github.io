@@ -1565,6 +1565,7 @@ section {
 }
 
 /* Table */
-.training td{
+.training td, th{
     border: 1px dotted #999999;
+    padding: 10px;
 }
