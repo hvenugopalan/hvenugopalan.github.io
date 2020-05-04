@@ -651,13 +651,85 @@
             decoder alone where the encoder was frozen while Figure
             9 corresponds to the output after training both the encoder
             and the decoder. The training loss and validation loss at
-            the final epoch for the decoder-only training are 0.642712
-            and 0.629103, respectively and the corresponding losses for
-            both the encoder and decoder training are 0.587440 and
-            0.585151, respectively.</p>
+            the final epoch for the decoder-only training are 0.84
+            and 0.85, respectively and the corresponding losses for
+            both the encoder and decoder training are 0.51 and
+            0.50, respectively.</p>
         </div>
       </div>
     </section>
+    <!--Results section images-->
+    <div class="training container">
+      <!-- <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-md-6  d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box">
+              <img src="./assets/img/tiff.jpg" class="img-fluid">
+              <h4 class="title"><a href="">Image scene example</a></h4>
+            </div>
+          </div>
+
+
+          <div class="col-md-6  d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box">
+              <img src="./assets/img/geojson.jpg" class="img-fluid">
+              <h4 class="title">Label Image example</h4>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-box">
+              <img src="../assets/img/tiles.jpg" class="img-fluid">
+              <h4 class="title">Pre-processed Data Tile (Left: Image
+                Tile, Right: Label Tile)</h4>
+            </div>
+          </div>
+          <div class="col-md-3"></div>
+        </div>
+
+      </div> -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Model</th>
+            <th scope="col">Test tile</th>
+            <th scope="col">Output</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Resnet34 with flip added and self-attention</td>
+            <td><img src="./assets/img/test_img.JPG"></td>
+            <td><img src="./assets/img/test_res34fa.JPG"></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Resnet34 with flip added</td>
+            <td><img src="./assets/img/test_img.JPG"></td>
+            <td><img src="./assets/img/test_res34f.JPG"></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Resnet34 without data augmentation</td>
+            <td><img src="./assets/img/test_img.JPG"></td>
+            <td><img src="./assets/img/test_res34woda.JPG"></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Resnet18</td>
+            <td><img src="./assets/img/test_img.JPG"></td>
+            <td><img src="./assets/img/test_res18.JPG"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
 
     <!--Challenges-->
