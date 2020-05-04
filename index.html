@@ -51,7 +51,8 @@
           <li><a href="#rw">Related Work</a></li>
           <li><a href="#ds">Dataset</a></li>
           <li><a href="#method">Methodology</a></li>
-          <li><a href="#te">Testing and Evaluation</a></li>
+          <li><a href="#te">Evaluation</a></li>
+          <li><a href="#exp">Experiments</a></li>
           <li><a href="#r">Results</a></li>
           <li><a href="#c">Challenges</a></li>
           <li><a href="#ref">References</a></li>
@@ -475,58 +476,15 @@
             </div>
           </div>
         </div>
-        <br>
-        <br>
-        <div class="row">
-          <div class="col-md-12  d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon-box">
-              <img src="./assets/img/Decoder_Table&Better.JPG" class="img-fluid" style="height:90%; width:80%">
-              <h4 class="title">Model Training Output for Decoder Only</h4>
-            </div>
-          </div>
-        </div>
-        <br>
-        <br>
-
-        <br>
-        <br>
-        <div class="row">
-          <div class="col-md-12  d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon-box">
-              <img src="./assets/img/Both_Table.JPG" class="img-fluid" style="height:90%; width:80%">
-              <h4 class="title">Model Training Output for Decoder and Encoder</h4>
-            </div>
-          </div>
-        </div>
-        <br>
-        <br>
-        <div class="row">
-          <div class="col-md-6  d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon-box">
-              <img src="./assets/img/Both_Prediction.JPG" class="img-fluid" style="height:90%; width:80%">
-              <h4 class="title">Model Prediction Example for Decoder and Encoder</h4>
-            </div>
-          </div>
-
-          <div class="col-md-6  d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon-box">
-              <img src="./assets/img/DecoderOnly_Prediction.JPG" class="img-fluid" style="height:90%; width:80%">
-              <h4 class="title">Model Prediction Example for Decoder Only</h4>
-            </div>
-          </div>
-        </div>
-
-
-
       </div>
     </section>
 
-    <!--Testing and Evaluation-->
+    <!--Evaluation-->
     <section id="te" class="features" data-aos="fade-up">
       <div class="container">
 
         <div class="section-title">
-          <h2>Testing and Evaluation</h2>
+          <h2>Evaluation</h2>
         </div>
         <div>
           <p>The quantitative evaluation of our prediction model is
@@ -566,6 +524,29 @@
       </div>
     </section>
 
+    <!--Experiments-->
+    <section id="exp" class="features" data-aos="fade-up">
+      <div class="container">
+        <div class="section-title">
+          <h2>Experiments</h2>
+        </div>
+        <div>
+          <p>
+            Due to computational and time constraints, we were not able to optimize all the hyperparameters. We varied
+            the following hyper-parameters:
+          </p>
+          <ol>
+            <li>Found a good learning rate using lr_find function.</li>
+            <li>Fine tuned the decoder part of UNet part separately first using pretrained resnet weights.</li>
+            <li>Different higher layered encoder for the U-Net like resnet18, resnet34, etc.</li>
+            <li>Data Augmentation (without data augmentation, with different types of data augmentation).</li>
+            <li>With and without self attention.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+
     <!--Results-->
     <section id="r" class="features" data-aos="fade-up">
       <div class="container">
@@ -574,12 +555,9 @@
           <h2>Results</h2>
         </div>
         <div>
-          <p>The final results of our prediction model will be in the
+          <p>The final results of our prediction model are in the
             form of an image representing the building footprint mask.
-            The building footprint mask for each image tile in the
-            test set would consist of TRUE (denoting the existence of
-            building footprint) and FALSE (denoting the absence of a
-            building) pixel values.<br>
+            <br>
             The current results are as shown in Figure 8 and Figure 9.
             Figure 8 corresponds to the output after the training of the
             decoder alone where the encoder was frozen while Figure
@@ -589,6 +567,48 @@
             and 0.629103, respectively and the corresponding losses for
             both the encoder and decoder training are 0.587440 and
             0.585151, respectively.</p>
+        </div>
+      </div>
+    </section>
+    <section class="services">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-md-12  d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box">
+              <img src="./assets/img/Decoder_Table&Better.JPG" class="img-fluid" style="height:90%; width:80%">
+              <h4 class="title">Model Training Output for Decoder Only</h4>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-md-12  d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box">
+              <img src="./assets/img/Both_Table.JPG" class="img-fluid" style="height:90%; width:80%">
+              <h4 class="title">Model Training Output for Decoder and Encoder</h4>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-md-6  d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box">
+              <img src="./assets/img/Both_Prediction.JPG" class="img-fluid" style="height:90%; width:80%">
+              <h4 class="title">Model Prediction Example for Decoder and Encoder</h4>
+            </div>
+          </div>
+
+          <div class="col-md-6  d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box">
+              <img src="./assets/img/DecoderOnly_Prediction.JPG" class="img-fluid" style="height:90%; width:80%">
+              <h4 class="title">Model Prediction Example for Decoder Only</h4>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -667,17 +687,17 @@
 
     <div class="container d-md-flex py-4">
 
-      <div class="mr-md-auto text-center text-md-left">
-        <!-- <div class="copyright">
-          &copy; Copyright <strong><span>Bikin</span></strong>. All Rights Reserved -->
+      <!-- <div class="mr-md-auto text-center text-md-left">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Harikrishnan Venugopalan</span></strong>. All Rights Reserved.
       </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bikin-free-simple-landing-page-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
+      <div class="credits"> -->
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bikin-free-simple-landing-page-template/ -->
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
     </div>
     </div>
   </footer><!-- End Footer -->
