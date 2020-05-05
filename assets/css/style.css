@@ -1573,3 +1573,8 @@ section {
 .notbold {
   font-weight:normal;
 }
+
+.results td, th{
+  border: none;
+  text-align: center;
+}

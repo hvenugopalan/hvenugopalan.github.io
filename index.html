@@ -46,16 +46,16 @@
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li><a href="#home">Home</a></li>
-          <li><a href="#pd">Problem definition</a></li>
-          <li><a href="#m">Motivation</a></li>
-          <li><a href="#rw">Related Work</a></li>
-          <li><a href="#ds">Dataset</a></li>
-          <li><a href="#method">Methodology</a></li>
-          <li><a href="#te">Evaluation</a></li>
-          <li><a href="#exp">Experiments</a></li>
-          <li><a href="#r">Results</a></li>
-          <li><a href="#c">Challenges</a></li>
-          <li><a href="#ref">References</a></li>
+          <li><a href="#problem-definition">Problem definition</a></li>
+          <li><a href="#motivation">Motivation</a></li>
+          <li><a href="#related-works">Related Work</a></li>
+          <li><a href="#dataset">Dataset</a></li>
+          <li><a href="#methodology">Methodology</a></li>
+          <li><a href="#evaluation">Evaluation</a></li>
+          <li><a href="#experiments">Experiments</a></li>
+          <li><a href="#results">Results</a></li>
+          <li><a href="#challenges">Challenges</a></li>
+          <li><a href="#references">References</a></li>
 
 
         </ul>
@@ -79,7 +79,7 @@
 
   <main id="main">
     <!-- Problem Definition -->
-    <section id="pd" class="features" data-aos="fade-up">
+    <section id="problem-definition" class="features" data-aos="fade-up">
       <div class="container">
 
         <div class="section-title">
@@ -95,7 +95,7 @@
         </div>
     </section>
     <!--Motivation-->
-    <section id="m" class="features" data-aos="fade-up">
+    <section id="motivation" class="features" data-aos="fade-up">
       <div class="container">
 
         <div class="section-title">
@@ -116,7 +116,7 @@
     </section>
 
     <!--Related Works-->
-    <section id="rw" class="steps" data-aos="fade-up">
+    <section id="related-works" class="steps" data-aos="fade-up">
       <div class="container">
         <div class="section-title">
           <h2>Related Work</h2>
@@ -127,14 +127,15 @@
             <p>There is a large amount of literature on semantic segmentation. O Ronneberger et al. architectured a
               convolutional
               neural network (CNN) for medical image segmentation that
-              consists of contracting and expanding paths. [7]. The main
+              consists of contracting and expanding paths. [<a href="#7">7</a>]. The main
               difference in the architecture is the concatenation of the
               contractive path feature maps to the corresponding expansion path layer. The model achieves good
               performance
               even
               on very few annotated images.</p><br>
             <p>Alex Kendall, Vijay Badrinarayana and Roberto Cipolla
-              proposed SegNet[3], a CNN for multi-class pixel-wise segmentation. The model architecture consists of
+              proposed SegNet[<a href="#3">3</a>], a CNN for multi-class pixel-wise segmentation. The model architecture
+              consists of
               encoder, decoder
               and a pixel-wise classifier. SegNet achieves great performance in terms of memory and time during
               inference.
@@ -156,9 +157,9 @@
               reference data for image segmentation by using online map
               data from OpenStreetMap (OSM) to automatically obtain
               weakly labeled training data for three classes, namely buildings, roads, and background (everything other
-              than buildings and roads).[5]. They use deep learning techniques,
+              than buildings and roads).[<a href="#5">5</a>]. They use deep learning techniques,
               which they purport as data hungry and robust to label noise.</p><br>
-            <p>Sebastien Ohleyer [6] performed segmentation on aerial
+            <p>Sebastien Ohleyer [<a href="#6">6</a>] performed segmentation on aerial
               image datasets using a Mask R-CNN and compared its performance to baseline results obtained with two more
               classical networks: a Fully Convolutional Network (FCN) and
               its extension using a Multi-Layer Perceptron (MLP). It was
@@ -175,7 +176,7 @@
     </section>
 
     <!--Dataset-->
-    <section id="ds" class="features" data-aos="fade-up">
+    <section id="dataset" class="features" data-aos="fade-up">
       <div class="container">
         <div class="section-title">
           <h2>Dataset</h2>
@@ -269,7 +270,7 @@
     </section>
 
     <!-- ======= Methodology ======= -->
-    <section id="method" class="steps">
+    <section id="methodology" class="steps">
       <div class="section-title">
         <h2>Methodology</h2>
         <h3>Data preprocessing</h3>
@@ -437,10 +438,10 @@
               map for segmentation of the image. Since the decoding process loses some of the higher level features
               learned by the encoder, the skip connections
               of the U-Net passes the outputs of the encoding layers directly to the decoding layers so that all the
-              important pieces of information can be preserved [8].
+              important pieces of information can be preserved [<a href="#8">8</a>].
               The fastai library was used to create and train our
               U-Net model with the U-Net learner class. The
-              data along with the ImageNet pretrained encodernetwork (Resnet34), our accuracy function as well
+              data along with the ImageNet pretrained encoder network (Resnet34), our accuracy function as well
               as a weight-decay of 0.01 was passed. Then, using
               the fastai function, an appropriate learning rate was
               found and the model training was started. First, we
@@ -510,7 +511,8 @@
           <div class="col-md-6  d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <img src="./assets/img/res34_fa_de.JPG" class="img-fluid" style="height:90%; width:80%">
-              <h4 class="title"><span class="notbold">Fig.8: </span>Model Prediction Example for Decoder and Encoder</h4>
+              <h4 class="title"><span class="notbold">Fig.8: </span>Model Prediction Example for Decoder and Encoder
+              </h4>
             </div>
           </div>
         </div>
@@ -519,7 +521,7 @@
     </section>
 
     <!--Evaluation-->
-    <section id="te" class="features" data-aos="fade-up">
+    <section id="evaluation" class="features" data-aos="fade-up">
       <div class="container">
 
         <div class="section-title">
@@ -564,7 +566,7 @@
     </section>
 
     <!--Experiments-->
-    <section id="exp" class="features" data-aos="fade-up">
+    <section id="experiments" class="features" data-aos="fade-up">
       <div class="container">
         <div class="section-title">
           <h2>Experiments</h2>
@@ -642,30 +644,31 @@
       </div>
     </section>
     <!--Experiments section images-->
-    <div class="training">
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col"><span class="notbold">Fig.10: </span>Resnet34 with flip added and self-attention</th>
-            <th scope="col"><span class="notbold">Fig.11: </span>Resnet34 with flip added</th>
-            <th scope="col"><span class="notbold">Fig.12: </span>Resnet34 without data augmentation</th>
-            <th scope="col"><span class="notbold">Fig.13: </span>Resnet18</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><img src="./assets/img/test_res34fa.JPG"></td>
-            <td><img src="./assets/img/test_res34f.JPG"></td>
-            <td><img src="./assets/img/test_res34woda.JPG"></td>
-            <td><img src="./assets/img/test_res18.JPG"></td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="features container">
+      
+      <div class="row">
+        <span class="col-md-6 text-center"><img src="./assets/img/test_res34fa.JPG"></span>
+        <span class="col-md-6 text-center"><img src="./assets/img/test_res34f.JPG"></span>
+      </div>
+      <div class="row">
+        <span class="col-md-6 text-center">Fig.10: <strong>Resnet34 with flip added and self-attention</strong> </span>
+        <span class="col-md-6 text-center">Fig.11: <strong>Resnet34 with flip added</strong> </span>
+      </div>
+      <br><br>
+      <div class="row">
+        <span class="col-md-6 text-center"><img src="./assets/img/test_res34woda.JPG"></span>
+        <span class="col-md-6 text-center"><img src="./assets/img/test_res18.JPG"></span>
+      </div>
+      <div class="row">
+        <span class="col-md-6 text-center">Fig.10: <strong>Resnet34 without data augmentation</strong> </span>
+        <span class="col-md-6 text-center">Fig.11: <strong>Resnet18</strong> </span>
+      </div>
+      
     </div>
 
 
     <!--Results-->
-    <section id="r" class="features" data-aos="fade-up">
+    <section id="results" class="features" data-aos="fade-up">
       <div class="container">
 
         <div class="section-title">
@@ -687,8 +690,44 @@
       </div>
     </section>
 
+    <div class="container results">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Test tile</th>
+            <th>Output</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="./assets/img/r_t_1.JPG"></td>
+            <td><img src="./assets/img/r_1.JPG"></td>
+          </tr>
+          <tr>
+            <td><img src="./assets/img/r_t_2.JPG"></td>
+            <td><img src="./assets/img/r_2.JPG"></td>
+          </tr>
+          <tr>
+            <td><img src="./assets/img/r_t_3.JPG"></td>
+            <td><img src="./assets/img/r_3.JPG"></td>
+          </tr>
+          <tr>
+            <td><img src="./assets/img/r_t_4.JPG"></td>
+            <td><img src="./assets/img/r_4.JPG"></td>
+          </tr>
+          <tr>
+            <td><img src="./assets/img/r_t_5.JPG"></td>
+            <td><img src="./assets/img/r_5.JPG"></td>
+          </tr>
+          <tr>
+            <td><img src="./assets/img/r_t_6.JPG"></td>
+            <td><img src="./assets/img/r_6.JPG"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <!--Challenges-->
-    <section id="c" class="features" data-aos="fade-up">
+    <section id="challenges" class="features" data-aos="fade-up">
       <div class="container">
 
         <div class="section-title">
@@ -706,7 +745,7 @@
     </section>
 
     <!--References-->
-    <section id="ref" class="features" data-aos="fade-up">
+    <section id="references" class="features" data-aos="fade-up">
       <div class="container">
 
         <div class="section-title">
@@ -714,34 +753,36 @@
         </div>
         <div>
           <ol>
-            <li>How to segment building on drone imagery with fast.ai &
-              cloud-native geodata tools. shorturl.at/dnxUY.</li>
-            <li>Open cities ai challenge: Segmenting buildings for disaster resilience, 2020. https:
+            <li id="1">How to segment building on drone imagery with fast.ai &
+              cloud-native geodata tools. (<a
+                href="https://medium.com/@anthropoco/how-to-segment-buildings-on-drone-imagery-with-fast-ai-cloud-native-geodata-tools-ae249612c321">Link</a>)
+            </li>
+            <li id="2">Open cities ai challenge: Segmenting buildings for disaster resilience, 2020.(<a href="https:
               //www.drivendata.org/competitions/60/
               building-segmentation-disaster-resilience/
-              page/150/.</li>
-            <li>Vijay Badrinarayanan, Alex Kendall, and Roberto Cipolla.
+              page/150/">Link</a>)</li>
+            <li id="3">Vijay Badrinarayanan, Alex Kendall, and Roberto Cipolla.
               SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation. IEEE Transactions on
               Pattern
               Analysis and Machine Intelligence, 39(12):2481–2495, Dec.
               2017.</li>
-            <li>Vincent Fung. An Overview of ResNet and its Variants, July
+            <li id="4">Vincent Fung. An Overview of ResNet and its Variants, July
               2017.</li>
-            <li>Pascal Kaiser, Jan Dirk Wegner, Aurelien Lucchi, Martin ´
+            <li id="5">Pascal Kaiser, Jan Dirk Wegner, Aurelien Lucchi, Martin ´
               Jaggi, Thomas Hofmann, and Konrad Schindler. Learning
               Aerial Image Segmentation From Online Maps. IEEE Transactions on Geoscience and Remote Sensing,
               55(11):6054–
               6068, Nov. 2017.</li>
-            <li>Sebastien Ohleyer and ENS Paris-Saclay. Building segmentation on satellite images. page 5.</li>
-            <li>Olaf Ronneberger, Philipp Fischer, and Thomas Brox. UNet: Convolutional Networks for Biomedical Image
+            <li id="6">Sebastien Ohleyer and ENS Paris-Saclay. Building segmentation on satellite images. page 5.</li>
+            <li id="7">Olaf Ronneberger, Philipp Fischer, and Thomas Brox. UNet: Convolutional Networks for Biomedical
+              Image
               Segmentation. In Nassir Navab, Joachim Hornegger, William M.
               Wells, and Alejandro F. Frangi, editors, Medical Image Computing and Computer-Assisted Intervention –
               MICCAI 2015,
               Lecture Notes in Computer Science, pages 234–241, Cham,
               2015. Springer International Publishing.</li>
-            <li>Gilbert Tanner. Fastai image segmentation,
-              2019. https://gilberttanner.com/blog/
-              fastai-image-segmentation.</li>
+            <li id="8">Gilbert Tanner. Fastai image segmentation,
+              2019. (<a href="https://gilberttanner.com/blog/fastai-image-segmentation">Link</a>).</li>
           </ol>
         </div>
       </div>
