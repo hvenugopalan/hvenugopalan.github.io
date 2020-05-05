@@ -301,8 +301,7 @@
             <p>In this step, the mask for each tile was created
               by cropping and using the solaris package. The
               3-channel mask has building footprint as the first
-              channel, the boundary as the second and a 0-
-              initialised third channel.
+              channel, the boundary as the second and closed contact points between nearby buildings as the third channel.
             </p>
           </div>
 
@@ -320,7 +319,7 @@
               Then, a GeoDataFrame that consists of all the
               supermercado-generated slippy map tile polygons
               was generated using the Python library, ’geopandas’.
-              Finally, all the tiles( created for all the cities and
+              Finally, all the tiles(created for all the cities and
               its corresponding labels) were merged into a single folder for training the building segmentation
               model.</p>
           </div>
@@ -339,7 +338,7 @@
             <p>Few of the training set tiles were visualised to view
               the preprocessed data, as shown in the figure below.
               Then, the images and masks were saved in images
-              and masks folder respectively</p>
+              and masks folder respectively.</p>
           </div>
 
         </div>
