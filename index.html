@@ -676,16 +676,16 @@
         </div>
         <div>
           <p>The final results of our prediction model are in the
-            form of an image representing the building footprint mask.
-            The current results are as shown in Figure 8 and Figure 9.
-            Figure 8 corresponds to the output after the training of the
-            decoder alone where the encoder was frozen while Figure
-            9 corresponds to the output after training both the encoder
-            and the decoder. The training loss and validation loss at
+            form of an image representing the building footprint mask as shown below.
+            The training loss and validation loss at
             the final epoch for the decoder-only training are 0.84
             and 0.85, respectively and the corresponding losses for
             both the encoder and decoder training are 0.51 and
-            0.50, respectively.</p>
+            0.50, respectively.</p><br>
+            In order to get a better accuracy for our results, we tried data augmentation, applying self-attention mechanisms, and using higher-level architectures. Between the models trained with augmented data and raw data, the former performed better. Between the models that used and did not use a 
+            self-attention mechanism, the former performed better. We also found that architectures with higher number of levels gave much better accuracy compared
+            to ones that had fewer levels.<br><br>
+            We found that a Resnet34 architecture with a self-attention mechanism, trained using augmented data outperformed the others and gave the highest accuracy. The following are a few test images and the corresponding outputs from such a model.  
         </div>
       </div>
     </section>
